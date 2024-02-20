@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Joboard", "Joboard.csproj", "{8C35FCA6-0E5F-40F8-A51E-745C997F064C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C35FCA6-0E5F-40F8-A51E-745C997F064C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C35FCA6-0E5F-40F8-A51E-745C997F064C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C35FCA6-0E5F-40F8-A51E-745C997F064C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C35FCA6-0E5F-40F8-A51E-745C997F064C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F52F6DE0-7F85-464B-963A-8C24591B2248}
+	EndGlobalSection
+EndGlobal
