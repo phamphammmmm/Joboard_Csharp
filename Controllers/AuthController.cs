@@ -20,8 +20,7 @@ namespace Joboard.Controllers
         private readonly IAuthService _authService;
 
         public AuthController(ApplicationDbContext context,
-                              IAuthService authService
-                              )
+                              IAuthService authService)
         {
             _context = context;
             _authService = authService;

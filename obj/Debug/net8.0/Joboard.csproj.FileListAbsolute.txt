@@ -7,6 +7,7 @@ D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\Joboard.MvcApplicationPartsAssemblyI
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\Joboard.MvcApplicationPartsAssemblyInfo.cache
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\Joboard.RazorAssemblyInfo.cache
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\Joboard.RazorAssemblyInfo.cs
+D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\Joboard.sourcelink.json
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\appsettings.Development.json
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\appsettings.json
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Joboard.staticwebassets.runtime.json
@@ -16,7 +17,13 @@ D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Joboard.runtimeconfig.json
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Joboard.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Joboard.pdb
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\EPPlus.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\EPPlus.Interfaces.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\EPPlus.System.Drawing.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Humanizer.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -30,8 +37,12 @@ D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Mono.TextTemplating.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Namotion.Reflection.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Newtonsoft.Json.dll
@@ -47,6 +58,7 @@ D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\NSwag.Core.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\NSwag.Core.Yaml.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\NSwag.Generation.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\NSwag.Generation.AspNetCore.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\QRCoder.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -56,7 +68,9 @@ D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\System.Composition.Convention.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\System.Composition.Hosting.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\System.Composition.Runtime.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\System.Drawing.Common.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\System.IO.Packaging.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\YamlDotNet.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
@@ -110,6 +124,8 @@ D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\staticwebassets.build.json
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\staticwebassets.development.json
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\staticwebassets\msbuild.Joboard.Microsoft.AspNetCore.StaticWebAssets.props
@@ -126,7 +142,3 @@ D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\refint\Joboard.dll
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\Joboard.pdb
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\Joboard.genruntimeconfig.cache
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\ref\Joboard.dll
-D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\Joboard.sourcelink.json
