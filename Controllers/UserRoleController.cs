@@ -36,7 +36,7 @@ namespace Joboard.Controllers
                 })
                 .ToListAsync();
 
-            return Ok(userRoles);
+            return Ok(userRoles);   
         }
 
         // POST: api/authorize/userrole/create

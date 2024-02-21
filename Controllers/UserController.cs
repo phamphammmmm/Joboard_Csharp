@@ -2,6 +2,7 @@
 using Joboard.DTO.User;
 using Joboard.Entities.Customer;
 using Joboard.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using System.Numerics;
 
 namespace Joboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("/api/users")]
     [ApiController]
     public class UserController : Controller

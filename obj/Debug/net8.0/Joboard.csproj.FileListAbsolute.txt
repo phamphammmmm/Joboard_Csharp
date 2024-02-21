@@ -126,3 +126,7 @@ D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\refint\Joboard.dll
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\Joboard.pdb
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\Joboard.genruntimeconfig.cache
 D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\ref\Joboard.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Code\C#\Joboard\Joboard\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Code\C#\Joboard\Joboard\obj\Debug\net8.0\Joboard.sourcelink.json

@@ -14,6 +14,11 @@ using Joboard.Service.Tag;
 using Joboard.Service.Category;
 using Joboard.Entities;
 using Joboard.Repository.Category;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Text;
+using Joboard.Service.Auth;
+using Joboard.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,10 +33,30 @@ builder.Services.AddScoped<PasswordHelper>();
 builder.Services.AddScoped<ITagService, TagService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+//Config JWT to make authenication API
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options =>
+        {
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ClockSkew = TimeSpan.Zero,
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Jwt:SecretKey"])),
+            };
+        });
+
+builder.Services.AddAuthorization();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
