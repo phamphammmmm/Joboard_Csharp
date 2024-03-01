@@ -22,6 +22,13 @@ using Joboard.Services;
 using Joboard.Service.User;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Joboard.Service.User.QrCode;
+using Joboard.Extensions;
+using Hangfire;
+using Joboard.Service.Company;
+using Joboard.Repository.Company;
+using Joboard.Service.Job;
+using Joboard.Repository.Job;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,16 +40,22 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 //Add independencies to the controller
 builder.Services.AddScoped<PasswordHelper>();
+builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<ITagService, TagService>();
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IQrCodeService, QrCodeService>();
-builder.Services.AddScoped<IRoleService, RoleService>();
-builder.Services.AddScoped<IImageService, ImageService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<IQrCodeService, QrCodeService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+
+//Add independencies to the controller
+builder.Services.AddScoped<IJobRepository, JobRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepositoy>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<ICompanyRepository, CompanyRepositoy>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 
@@ -87,6 +100,11 @@ builder.Services.AddSwaggerDocument(config =>
     };
 });
 
+//Config service to ElasticSearch
+builder.Services.AddElasticSearch(builder.Configuration);
+
+//Register the ReccuringJob
+builder.Services.AddSingleton<IRecurringJobManager, RecurringJobManager>();
 
 var app = builder.Build();
 

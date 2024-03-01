@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\avatar\\267a64d8-92b6-45cf-8d24-de63c168c74a_pexels-athena-2371936.jpg"
     },
     {
+      "Id": "D:\\Code\\C#\\Joboard\\Joboard\\wwwroot\\avatar\\755bffc2-fa7f-4eee-b46a-9c44d4763d37_pexels-athena-2371936.jpg",
+      "PackagePath": "staticwebassets\\avatar\\755bffc2-fa7f-4eee-b46a-9c44d4763d37_pexels-athena-2371936.jpg"
+    },
+    {
       "Id": "D:\\Code\\C#\\Joboard\\Joboard\\wwwroot\\avatar\\94abe201-bcca-4348-8999-e878268f277b_pexels-eberhard-grossgasteiger-2310641.jpg",
       "PackagePath": "staticwebassets\\avatar\\94abe201-bcca-4348-8999-e878268f277b_pexels-eberhard-grossgasteiger-2310641.jpg"
     },
@@ -255,6 +259,10 @@
     {
       "Id": "D:\\Code\\C#\\Joboard\\Joboard\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Code\\C#\\Joboard\\Joboard\\wwwroot\\qrcodes\\4_qrcode.png",
+      "PackagePath": "staticwebassets\\qrcodes\\4_qrcode.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Joboard.Microsoft.AspNetCore.StaticWebAssets.props",

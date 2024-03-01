@@ -10,6 +10,6 @@ namespace Joboard.Service.User
         Task<bool> UpdateUserAsync(int? id, UserEdit_DTO userEdit_DTO);
         Task<bool> DeleteUserAsync(int? userId);
         void ImportFromExcel(IFormFile file);
-        void ExportExcel(List<Entities.Customer.User> user, Stream stream);
+        void ExportToExcel(List<Entities.Customer.User> user, Stream stream);
     }
 }

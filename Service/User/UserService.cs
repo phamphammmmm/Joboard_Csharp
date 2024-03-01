@@ -4,6 +4,7 @@ using Joboard.Controllers;
 using Joboard.DTO.User;
 using Joboard.Entities.Customer;
 using Joboard.Repository;
+using Joboard.Service.User.QrCode;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
@@ -77,7 +78,7 @@ namespace Joboard.Service.User
             return null;
         }
 
-        public void ExportExcel(List<Entities.Customer.User> users, Stream stream)
+        public void ExportToExcel(List<Entities.Customer.User> users, Stream stream)
         {
             using (var package = new ExcelPackage(stream))
             {
@@ -170,11 +171,6 @@ namespace Joboard.Service.User
         public async Task<bool> UpdateUserAsync(int? id, UserEdit_DTO userEdit_DTO)
         {
             if (id == null)
-            {
-                return false;
-            }
-
-            if (userEdit_DTO.ImageFile == null)
             {
                 return false;
             }

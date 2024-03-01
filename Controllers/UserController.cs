@@ -2,6 +2,7 @@
 using Joboard.Context;
 using Joboard.DTO.User;
 using Joboard.Entities.Customer;
+using Joboard.Repository;
 using Joboard.Service;
 using Joboard.Service.User;
 //using Microsoft.AspNetCore.Authorization;
@@ -22,14 +23,17 @@ namespace Joboard.Controllers
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IUserService _userService;
+        private readonly IUserRepository _userRepository;
 
         public UserController(ApplicationDbContext context, 
                               IWebHostEnvironment webHostEnvironment, 
-                              IUserService userService
+                              IUserService userService,
+                              IUserRepository userRepository
                               )
         {
             _context = context;
             _userService = userService;
+            _userRepository = userRepository;
             _webHostEnvironment = webHostEnvironment;
         }
 
@@ -125,5 +129,40 @@ namespace Joboard.Controllers
             }
         }
 
+        [HttpPost("export")]
+        public async Task<IActionResult> ExportToExcel(Entities.Customer.User user)
+        {
+            var customers = await _userRepository.ExportToExcel();
+
+            using (var stream = new MemoryStream())
+            {
+                _userService.ExportToExcel(customers, stream);
+                var fileName = $"Customers_{DateTime.Now.ToString("yyyyMMddHHmmss")}.xlsx";
+                return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
+        }
+
+
+        [HttpGet("import")]
+        public IActionResult ImportFromExcel(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("Invalid file.");
+            }
+
+            try
+            {
+                _userService.ImportFromExcel(file);
+
+                TempData["message"] = "Customers imported successfully.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = $"Error importing data: {ex.Message}";
+                return RedirectToAction("Index");
+            }
+        }
     }
 }

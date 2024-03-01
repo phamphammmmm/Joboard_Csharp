@@ -7,5 +7,7 @@
         Task<bool> CreateUserAsync(Entities.Customer.User user);
         Task<bool> UpdateUserAsync(Entities.Customer.User user);
         Task<bool> DeleteUserAsync(int? userId);
+        Task<List<Entities.Customer.User>> ExportToExcel();
+
     }
 }

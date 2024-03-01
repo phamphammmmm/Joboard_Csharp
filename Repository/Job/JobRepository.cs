@@ -13,16 +13,16 @@ namespace Joboard.Repository.Job
             _context = context;
         }
 
-        //public async Task<List<Entities.Job>> GetAllJobsAsync()
-        //{
-        //    //return await _context.Jobs.ToListAsync();
-        //}
+        public async Task<List<Entities.Job>> GetAllJobsAsync()
+        {
+            return await _context.Jobs.ToListAsync();
+        }
 
-        public async Task<bool> CreateJobAsync(Entities.Job category)
+        public async Task<bool> CreateJobAsync(Entities.Job job)
         {
             try
             {
-                //_context.Jobs.Add(category);
+                _context.Jobs.Add(job);
                 await _context.SaveChangesAsync();
                 return true;
             }
@@ -32,45 +32,36 @@ namespace Joboard.Repository.Job
             }
         }
 
-        public async Task<bool> UpdateJobAsync(Entities.Job category)
+        public async Task<bool> UpdateJobAsync(Entities.Job job)
         {
-            //_context.Jobs.Update(category);
+            _context.Jobs.Update(job);
             await _context.SaveChangesAsync();
             return true;
         }
 
-        public async Task<bool> DeleteJobAsync(int? categoryId)
+        public async Task<bool> DeleteJobAsync(int? jobId)
         {
-            if (categoryId == null)
+            if (jobId == null) throw new ArgumentNullException(nameof(jobId), "JobId is required");
+
+            var job = await _context.Jobs.FirstOrDefaultAsync(r => r.Id == jobId);
+            if (job == null) return false;
+
+            _context.Jobs.Remove(job);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<Entities.Job> GetJobByIdAsync(int? id)
+        {
+            if (id == null) throw new ArgumentNullException(nameof(id), "Job ID is required");
+
+            var job = await _context.Jobs.FirstOrDefaultAsync(r => r.Id == id);
+            if (job == null)
             {
-                throw new ArgumentNullException(nameof(categoryId), "JobId is required");
+                throw new KeyNotFoundException($"Job with ID {id} not found");
             }
 
-            //var category = await _context.Jobs.FirstOrDefaultAsync(r => r.Id == categoryId);
-            //if (category == null)
-            //{
-            //    return false;
-            //}
-
-            //_context.Jobs.Remove(category);
-            await _context.SaveChangesAsync();
-            return true;
+            return job;
         }
-
-        //public async Task<Entities.Job> GetJobByIdAsync(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        throw new ArgumentNullException(nameof(id), "Job ID is required");
-        //    }
-
-            //var category = await _context.Jobs.FirstOrDefaultAsync(r => r.Id == id);
-            //if (category == null)
-            //{
-            //    throw new KeyNotFoundException($"Job with ID {id} not found");
-            //}
-
-            //return category;
-        //}
     }
 }

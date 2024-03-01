@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fmv7GiA9WtpziavrJAscqqX4yCw55COGOU+x8S3T0hU=",
+  "Hash": "rPWo8XCQLJqojq6SptTY+ZZEsapR6b8ceUb14aI0fC8=",
   "Source": "Joboard",
   "BasePath": "_content/Joboard",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\avatar\\267a64d8-92b6-45cf-8d24-de63c168c74a_pexels-athena-2371936.jpg"
+    },
+    {
+      "Identity": "D:\\Code\\C#\\Joboard\\Joboard\\wwwroot\\avatar\\755bffc2-fa7f-4eee-b46a-9c44d4763d37_pexels-athena-2371936.jpg",
+      "SourceId": "Joboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\C#\\Joboard\\Joboard\\wwwroot\\",
+      "BasePath": "_content/Joboard",
+      "RelativePath": "avatar/755bffc2-fa7f-4eee-b46a-9c44d4763d37_pexels-athena-2371936.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avatar\\755bffc2-fa7f-4eee-b46a-9c44d4763d37_pexels-athena-2371936.jpg"
     },
     {
       "Identity": "D:\\Code\\C#\\Joboard\\Joboard\\wwwroot\\avatar\\94abe201-bcca-4348-8999-e878268f277b_pexels-eberhard-grossgasteiger-2310641.jpg",
@@ -1250,6 +1269,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\Code\\C#\\Joboard\\Joboard\\wwwroot\\qrcodes\\4_qrcode.png",
+      "SourceId": "Joboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\C#\\Joboard\\Joboard\\wwwroot\\",
+      "BasePath": "_content/Joboard",
+      "RelativePath": "qrcodes/4_qrcode.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\qrcodes\\4_qrcode.png"
     }
   ]
 }

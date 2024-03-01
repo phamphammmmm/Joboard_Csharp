@@ -15,6 +15,8 @@ namespace Joboard.Context
         public DbSet<Role> Roles { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Job> Jobs { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -46,6 +48,21 @@ namespace Joboard.Context
             modelBuilder.Entity<Category>()
                 .Property(u => u.Update_at)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+            modelBuilder.Entity<Company>()
+                .Property(u => u.Create_at)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+            modelBuilder.Entity<Company>()
+                .Property(u => u.Update_at)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+            modelBuilder.Entity<Job>()
+                .Property(u => u.Create_at)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+            modelBuilder.Entity<Job>()
+                .Property(u => u.Update_at)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
 
             modelBuilder.Entity<UserRole>()
                 .HasKey(wt => new { wt.User_Id, wt.Role_Id });

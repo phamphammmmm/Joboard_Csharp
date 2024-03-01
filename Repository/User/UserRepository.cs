@@ -73,6 +73,9 @@ namespace Joboard.Repository
             return user;
         }
 
-       
+        public async Task<List<Entities.Customer.User>> ExportToExcel()
+        {
+            return await _context.Users.ToListAsync();
+        }
     }
 }
