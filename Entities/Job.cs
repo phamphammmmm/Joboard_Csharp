@@ -7,6 +7,7 @@ namespace Joboard.Entities
 {
     public class Job : Activity
     {
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -50,5 +51,16 @@ namespace Joboard.Entities
         [ForeignKey("Company")]
         public int CompanyId { get; set; }
         public Company? Company { get; set; }
+
+        //COntructor Job
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+
+        public Job(string title, DateTime startTime, DateTime endTime)
+        {
+            Title = title;
+            StartTime = startTime;
+            EndTime = endTime;
+        }
     }
 }

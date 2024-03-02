@@ -33,7 +33,10 @@ namespace Joboard.DTO.Job
         public int NumberOfVacancies { get; set; }
         [Required]
         public string Type { get; set; } = string.Empty;
+        public bool AutoPost { get; set; } = false;
         public DateTime Create_at { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
 
         [Required]
         public int UserId { get; set; }

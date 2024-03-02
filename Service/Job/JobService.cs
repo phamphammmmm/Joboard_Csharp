@@ -20,7 +20,9 @@ namespace Joboard.Service.Job
         {
             if (jobCreate_DTO != null)
             {
-                var newJob = new Entities.Job
+                var newJob = new Entities.Job(jobCreate_DTO.Title,
+                                              jobCreate_DTO.StartTime,
+                                              jobCreate_DTO.EndTime)
                 {
                     UserId = jobCreate_DTO.UserId,
                     CategoryId = jobCreate_DTO.CategoryId,
@@ -40,6 +42,7 @@ namespace Joboard.Service.Job
                     isRemote = jobCreate_DTO.isRemote,
                     NumberOfVacancies = jobCreate_DTO.NumberOfVacancies,
                     Type = jobCreate_DTO.Type,
+
                 };
 
                 await _jobRepository.CreateJobAsync(newJob);

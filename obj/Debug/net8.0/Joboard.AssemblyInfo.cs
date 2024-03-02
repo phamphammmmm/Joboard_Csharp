@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Joboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2578b9d9ef2ad15b2ad94d1003c3f2c352a38d3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa12b2460f79f22d1d3fac883ea7b28098efdd1a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Joboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Joboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
