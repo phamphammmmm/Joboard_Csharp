@@ -3,7 +3,7 @@ using Joboard.Context;
 using Joboard.DTO.User;
 using Joboard.Entities.Customer;
 using Joboard.Repository;
-using Joboard.Service;
+using Joboard.Service.Email;
 using Joboard.Service.User;
 //using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -24,20 +24,22 @@ namespace Joboard.Controllers
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IUserService _userService;
         private readonly IUserRepository _userRepository;
+        private readonly IEmailService _emailService;
 
         public UserController(ApplicationDbContext context, 
                               IWebHostEnvironment webHostEnvironment, 
                               IUserService userService,
-                              IUserRepository userRepository
-                              )
+                              IUserRepository userRepository,
+                              IEmailService emailService)
         {
             _context = context;
             _userService = userService;
             _userRepository = userRepository;
+            _emailService = emailService;
             _webHostEnvironment = webHostEnvironment;
         }
 
-        [HttpGet]
+        [HttpGet("index")]
         public async Task<IActionResult> GetAllUsersAsync()
         {
             var users = await _userService.GetAllUsersAsync();
@@ -128,6 +130,53 @@ namespace Joboard.Controllers
                 return StatusCode(500, new { Message = $"An error occurred: {ex.Message}" });
             }
         }
+
+        //[HttpPost("forgotpassword")]
+        //public async Task<IActionResult> ForgotPassword(Forgot_Password_DTO model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var user = await _userService.GetUserByEmailAsync(model.Email);
+        //        if (user != null)
+        //        {
+        //            // Tạo mã thông báo đặt lại mật khẩu
+        //            var token = await _userService.GeneratePasswordResetTokenAsync(user);
+
+        //            // Gửi email chứa liên kết đặt lại mật khẩu đến người dùng
+        //            var callbackUrl = Url.Action("ResetPassword", "User", new { userId = user.Id, token }, protocol: HttpContext.Request.Scheme);
+        //            await _emailService.SendPasswordResetEmailAsync(model.Email, callbackUrl);
+
+        //            // Trả về 200 OK nếu thành công
+        //            return Ok(new { message = "An email with instructions to reset your password has been sent to your email address." });
+        //        }
+        //    }
+
+        //    return BadRequest(new { message = "Email not found." });
+        //}
+
+        //[HttpPost("resetpassword")]
+        //public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var user = await _userService.GetUserByIdAsync(model.UserId);
+        //        if (user != null)
+        //        {
+        //            // Đặt lại mật khẩu cho người dùng
+        //            var result = await _userService.ResetPasswordAsync(user, model.Token, model.NewPassword);
+        //            if (result.Succeeded)
+        //            {
+        //                return Ok(new { message = "Your password has been reset successfully." });
+        //            }
+        //            else
+        //            {
+        //                return BadRequest(new { message = "Failed to reset password." });
+        //            }
+        //        }
+        //    }
+
+        //    return BadRequest(new { message = "Invalid data." });
+        //}
 
         [HttpPost("export")]
         public async Task<IActionResult> ExportToExcel(Entities.Customer.User user)

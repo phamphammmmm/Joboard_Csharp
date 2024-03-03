@@ -53,7 +53,6 @@ namespace Joboard.Controllers
             }
         }
 
-
         private void DisplayJobs()
         {
             Console.WriteLine("Danh sách công việc:");

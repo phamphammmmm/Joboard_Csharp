@@ -29,6 +29,8 @@ using Joboard.Service.Company;
 using Joboard.Repository.Company;
 using Joboard.Service.Job;
 using Joboard.Repository.Job;
+using Joboard.Service.Email;
+using RabbitMQ.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,9 +39,22 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+//Config RabbitMQ
+//builder.Services.AddMassTransit(config => {
+//    config.UsingRabbitMq((ctx, cfg) => {
+//        cfg.Host("amqp://guest:guest@localhost:5672");
+//    });
+//});
+
+//ConnectionFactory factory = new ();
+//factory.Uri = new Uri("amqp://guest:guest@localhost:5672");
+//factory.ClientProvidedName = "Rabbit Sender Email";
+
+
 
 //Add independencies to the controller
 builder.Services.AddScoped<PasswordHelper>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<ITagService, TagService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -49,6 +64,8 @@ builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IImageService, ImageService>();
 builder.Services.AddScoped<IQrCodeService, QrCodeService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+
+// Trong ph?n kh?i t?o c?a ?ng d?ng ho?c trong ConfigureServices c?a Startup.cs
 
 //Add independencies to the controller
 builder.Services.AddScoped<IJobRepository, JobRepository>();

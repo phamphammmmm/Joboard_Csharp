@@ -1,4 +1,5 @@
 ﻿using Joboard.DTO.User;
+using Microsoft.AspNetCore.Identity;
 
 namespace Joboard.Service.User
 {
@@ -11,5 +12,8 @@ namespace Joboard.Service.User
         Task<bool> DeleteUserAsync(int? userId);
         void ImportFromExcel(IFormFile file);
         void ExportToExcel(List<Entities.Customer.User> user, Stream stream);
+        List<string> GetAllEmails();
+        Task<string> GeneratePasswordResetTokenAsync(Entities.Customer.User user);
+        Task<IdentityResult> ResetPasswordAsync(Entities.Customer.User user, string token, string newPassword);
     }
 }

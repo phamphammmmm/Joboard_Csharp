@@ -8,7 +8,7 @@ using Nest;
 
 namespace Joboard.Controllers
 {
-    [Route("/api/user")]
+    [Route("/api/elastic")]
     [ApiController]
     public class ElasticsearchControllers : ControllerBase
     {
@@ -52,16 +52,20 @@ namespace Joboard.Controllers
             return Ok(result.Documents.ToList());
         }
 
+        [HttpGet("start-sync-job")]
+
         public void StartSyncJob()
         {
             _recurringJobManager.AddOrUpdate("ElasticsearchSyncJob", () => SyncDataToElasticsearch(), "*/5 * * * * *");
         }
+        [HttpGet("stop-sync-job")]
 
         public void StopSyncJob()
         {
             _recurringJobManager.RemoveIfExists("ElasticsearchSyncJob");
         }
 
+        [HttpPost("sync-data-to-els")]
         //Sync data from Database to index of ElasticSearch
         public async Task SyncDataToElasticsearch()
         {
@@ -81,7 +85,7 @@ namespace Joboard.Controllers
                 var categoryInfo = new { job.Category.Name };
                 var companyInfo = new { job.Company.Name };
                 var userInfo = new { job.User.FullName };
-                
+
                 var jobInfo = new
                 {
                     job.Id,
@@ -96,7 +100,7 @@ namespace Joboard.Controllers
                     job.isRemote,
                     job.NumberOfVacancies,
                     job.Type,
-                    User  = userInfo,
+                    User = userInfo,
                     Category = categoryInfo,
                     Company = companyInfo,
                     Tags = jobTags.Select(tag => new { tag.Id, tag.Name }).ToArray()

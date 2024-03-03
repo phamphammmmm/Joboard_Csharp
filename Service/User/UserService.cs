@@ -5,6 +5,7 @@ using Joboard.DTO.User;
 using Joboard.Entities.Customer;
 using Joboard.Repository;
 using Joboard.Service.User.QrCode;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
@@ -170,7 +171,7 @@ namespace Joboard.Service.User
 
         public async Task<bool> UpdateUserAsync(int? id, UserEdit_DTO userEdit_DTO)
         {
-            if (id == null)
+            if (id == null || userEdit_DTO == null)
             {
                 return false;
             }
@@ -209,6 +210,31 @@ namespace Joboard.Service.User
         public async Task<bool> DeleteUserAsync(int? userId)
         {
             return await _userRepository.DeleteUserAsync(userId);
+        }
+
+        Task<string> GeneratePasswordResetTokenAsync(Entities.Customer.User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IdentityResult> ResetPasswordAsync(Entities.Customer.User user, string token, string newPassword)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<string> IUserService.GeneratePasswordResetTokenAsync(Entities.Customer.User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IdentityResult> IUserService.ResetPasswordAsync(Entities.Customer.User user, string token, string newPassword)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<string> GetAllEmails()
+        {
+            return _userRepository.GetAllEmails();
         }
     }
 }

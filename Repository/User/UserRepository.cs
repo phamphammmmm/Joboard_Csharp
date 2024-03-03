@@ -77,5 +77,25 @@ namespace Joboard.Repository
         {
             return await _context.Users.ToListAsync();
         }
+
+        public async Task<User> GetUserByEmailAsync(string Email)
+        {
+            if (Email == null)
+            {
+                throw new ArgumentNullException(nameof(Email), "Email is required");
+            }
+
+            var user = await _context.Users.FirstOrDefaultAsync(r => r.Email == Email);
+            if (user == null)
+            {
+                throw new KeyNotFoundException($"User with ID {Email} not found");
+            }
+
+            return user;
+        }
+        public List<string> GetAllEmails()
+        {
+            return _context.Users.Select(r => r.Email).ToList();
+        }
     }
 }

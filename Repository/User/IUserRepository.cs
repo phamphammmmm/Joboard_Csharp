@@ -8,6 +8,7 @@
         Task<bool> UpdateUserAsync(Entities.Customer.User user);
         Task<bool> DeleteUserAsync(int? userId);
         Task<List<Entities.Customer.User>> ExportToExcel();
-
+        Task<Entities.Customer.User> GetUserByEmailAsync(String Email);
+        List<string> GetAllEmails();
     }
 }
